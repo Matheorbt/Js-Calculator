@@ -1,0 +1,718 @@
+body {
+  background-color: #14213D;
+}
+
+.calculator {
+  height: 95vh;
+  width: 95vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.outline {
+  height: 80vh;
+  width: 30%;
+  background-color: #000000;
+  -webkit-box-shadow: 10px 10px 10px 0px #000000;
+          box-shadow: 10px 10px 10px 0px #000000;
+}
+
+.keyboardContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.keyboardOperand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.keyboardContainerLeft {
+  position: relative;
+  height: 83%;
+  width: 25%;
+  margin-top: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: flex;
+      -ms-flex-align: flex;
+          align-items: flex;
+}
+
+.keyboardContainerRight {
+  height: 83%;
+  width: 25%;
+  margin-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: flex;
+      -ms-flex-align: flex;
+          align-items: flex;
+}
+
+.keyboardNumber {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  margin: 25px;
+}
+
+.keyboardTop {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  left: 10%;
+  -ms-grid-columns: (100px)[3];
+      grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  font-size: 64px;
+  font-family: 'Roboto', sans-serif;
+  height: 100px;
+  width: 100px;
+  background-color: #14213D;
+}
+
+.number:hover {
+  -webkit-box-shadow: 0px 2px 2px 0px #14213D;
+          box-shadow: 0px 2px 2px 0px #14213D;
+  cursor: pointer;
+}
+
+.off {
+  width: 90%;
+  height: 120px;
+  background-color: #1b1b1b;
+  position: relative;
+  left: 5%;
+  top: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.off span {
+  color: #1b1b1b;
+}
+
+.screen {
+  width: 90%;
+  height: 120px;
+  background-color: #E5E5E5;
+  position: relative;
+  left: 5%;
+  top: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.screenNb {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  font-size: 64px;
+}
+
+.screenNb:hover {
+  cursor: context-menu;
+}
+
+.error {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  font-size: 64px;
+  font-family: 'Roboto', sans-serif;
+  height: 100px;
+  width: 100px;
+  background-color: #EF233C;
+  margin-left: 12px;
+}
+
+.power {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  font-size: 64px;
+  font-family: 'Roboto', sans-serif;
+  height: 100px;
+  width: 95px;
+  right: 1%;
+  background-color: #EF233C;
+  margin-left: 17px;
+}
+
+.error:hover {
+  -webkit-box-shadow: 0px 2px 2px 0px #EF233C;
+          box-shadow: 0px 2px 2px 0px #EF233C;
+  cursor: pointer;
+}
+
+.power:hover {
+  -webkit-box-shadow: 0px 2px 2px 0px #EF233C;
+          box-shadow: 0px 2px 2px 0px #EF233C;
+  cursor: pointer;
+}
+
+.sign {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: black;
+  font-size: 64px;
+  font-family: 'Roboto', sans-serif;
+  height: 100px;
+  width: 100px;
+  background-color: #fff;
+  top: 0%;
+}
+
+.sign:hover {
+  -webkit-box-shadow: 0px 2px 2px 0px #ffff;
+          box-shadow: 0px 2px 2px 0px #ffff;
+  cursor: pointer;
+}
+
+.keyboardOperand .sign {
+  margin: 7px;
+}
+
+@media only screen and (max-width: 1750px) {
+  .outline {
+    height: 90vh;
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .outline {
+    height: 90vh;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .outline {
+    height: 90vh;
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .outline {
+    height: 90vh;
+    width: 90%;
+  }
+  .sign {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: black;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #fff;
+    top: 0%;
+  }
+  .error {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #EF233C;
+    margin-left: 12px;
+  }
+  .power {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    right: 1%;
+    background-color: #EF233C;
+  }
+  .number {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #14213D;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .outline {
+    height: 75vh;
+    width: 60%;
+  }
+  .sign {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: black;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #fff;
+    top: 0%;
+  }
+  .error {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #EF233C;
+    margin-left: 12px;
+  }
+  .power {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    right: 1%;
+    background-color: #EF233C;
+  }
+  .number {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #14213D;
+  }
+  .keyboardContainerLeft {
+    position: relative;
+    height: 83%;
+    width: 25%;
+    margin-top: -2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: flex;
+        -ms-flex-align: flex;
+            align-items: flex;
+  }
+  .keyboardTop {
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    margin-top: 40%;
+    -ms-grid-columns: (75px)[3];
+        grid-template-columns: repeat(3, 75px);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .keyboardNumber {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (75px)[3];
+        grid-template-columns: repeat(3, 75px);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(75px, auto);
+    margin: 0px;
+    margin-left: 15%;
+    margin-top: 25%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .outline {
+    height: 75vh;
+    width: 80%;
+  }
+  .sign {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: black;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #fff;
+    top: 0%;
+  }
+  .error {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #EF233C;
+    margin-left: 12px;
+  }
+  .power {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    right: 1%;
+    background-color: #EF233C;
+  }
+  .number {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #14213D;
+  }
+  .keyboardContainerLeft {
+    position: relative;
+    height: 83%;
+    width: 25%;
+    margin-top: -2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: flex;
+        -ms-flex-align: flex;
+            align-items: flex;
+  }
+  .keyboardTop {
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    margin-top: 40%;
+    -ms-grid-columns: (75px)[3];
+        grid-template-columns: repeat(3, 75px);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .keyboardNumber {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (75px)[3];
+        grid-template-columns: repeat(3, 75px);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(75px, auto);
+    margin: 0px;
+    margin-left: 15%;
+    margin-top: 25%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .outline {
+    height: 75vh;
+    width: 100%;
+  }
+  .sign {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: black;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #fff;
+    top: 0%;
+  }
+  .error {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #EF233C;
+    margin-left: 12px;
+  }
+  .power {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    right: 1%;
+    background-color: #EF233C;
+  }
+  .number {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 75px;
+    background-color: #14213D;
+  }
+  .keyboardContainerLeft {
+    position: relative;
+    height: 83%;
+    width: 25%;
+    margin-top: -2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: flex;
+        -ms-flex-align: flex;
+            align-items: flex;
+  }
+  .keyboardTop {
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    margin-top: 40%;
+    -ms-grid-columns: (75px)[3];
+        grid-template-columns: repeat(3, 75px);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .keyboardNumber {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (75px)[3];
+        grid-template-columns: repeat(3, 75px);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(75px, auto);
+    margin: 0px;
+    margin-left: 15%;
+    margin-top: 25%;
+  }
+}
+/*# sourceMappingURL=index.css.map */

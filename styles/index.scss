@@ -1,0 +1,537 @@
+body {
+    background-color: #14213D;
+}
+
+.calculator {
+    height: 100vh - 5vh;
+    width: 100vw - 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outline {
+    height: 80vh;
+    width: 30%;
+    background-color: #000000;
+    box-shadow: 10px 10px 10px 0px #000000;
+}
+
+.keyboardContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.keyboardOperand {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.keyboardContainerLeft {
+    position: relative;
+    height: 83%;
+    width: 25%;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex;
+}
+
+.keyboardContainerRight {
+    height: 83%;
+    width: 25%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex;
+}
+
+.keyboardNumber {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    margin: 25px;
+}
+
+.keyboardTop {
+    position: relative;
+    display: grid;
+    left: 10%;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 64px;
+    font-family: 'Roboto', sans-serif;
+    height: 100px;
+    width: 100px;
+    background-color: #14213D;
+}
+
+.number:hover {
+    box-shadow: 0px 2px 2px 0px #14213D;
+    cursor: pointer;
+}
+
+.off {
+    width: 90%;
+    height: 120px;
+    background-color: rgb(27, 27, 27);
+    position: relative;
+    left: 5%;
+    top: 3%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.off span {
+    color: rgb(27, 27, 27);
+}
+
+.screen {
+    width: 90%;
+    height: 120px;
+    background-color:#E5E5E5;
+    position: relative;
+    left: 5%;
+    top: 3%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.screenNb {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 64px;
+}
+
+.screenNb:hover {
+    cursor: context-menu;
+}
+
+.error {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 64px;
+    font-family: 'Roboto', sans-serif;
+    height: 100px;
+    width: 100px;
+    background-color: #EF233C;
+    margin-left: 12px;
+}
+
+.power {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 64px;
+    font-family: 'Roboto', sans-serif;
+    height: 100px;
+    width: 95px;
+    right: 1%;
+    background-color: #EF233C;
+    margin-left: 17px;
+}
+
+.error:hover {
+    box-shadow: 0px 2px 2px 0px #EF233C;
+    cursor: pointer;
+}
+
+.power:hover {
+    box-shadow: 0px 2px 2px 0px #EF233C;
+    cursor: pointer;
+}
+
+.sign {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 64px;
+    font-family: 'Roboto', sans-serif;
+    height: 100px;
+    width: 100px;
+    background-color: #fff;
+    top: 0%;
+}
+
+.sign:hover {
+    box-shadow: 0px 2px 2px 0px #ffff;
+    cursor: pointer;
+}
+
+.keyboardOperand .sign {
+    margin: 7px;
+}
+
+//If the screen size is equal or less than 600px
+
+@media only screen and (max-width: 1750px) {
+    .outline {
+        height: 90vh;
+        width: 40%;
+    }
+  }
+
+@media only screen and (max-width: 1250px) {
+    .outline {
+        height: 90vh;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .outline {
+        height: 90vh;
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .outline {
+        height: 90vh;
+        width: 90%;
+    }
+
+    .sign {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #fff;
+        top: 0%;
+    }
+
+    .error {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #EF233C;
+        margin-left: 12px;
+    }
+
+    .power {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        right: 1%;
+        background-color: #EF233C;
+    }
+
+    .number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #14213D;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .outline {
+        height: 75vh;
+        width: 60%;
+    }
+
+    .sign {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #fff;
+        top: 0%;
+    }
+
+    .error {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #EF233C;
+        margin-left: 12px;
+    }
+
+    .power {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        right: 1%;
+        background-color: #EF233C;
+    }
+
+    .number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #14213D;
+    }
+
+    .keyboardContainerLeft {
+        position: relative;
+        height: 83%;
+        width: 25%;
+        margin-top: -2%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex;
+    }
+
+    .keyboardTop {
+        position: relative;
+        display: grid;
+        margin-top: 40%;
+        grid-template-columns: repeat(3, 75px);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+    .keyboardNumber {
+        display: grid;
+        grid-template-columns: repeat(3, 75px);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(75px, auto);
+        margin: 0px;
+        margin-left: 15%;
+        margin-top: 25%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .outline {
+        height: 75vh;
+        width: 80%;
+    }
+
+    .sign {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #fff;
+        top: 0%;
+    }
+
+    .error {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #EF233C;
+        margin-left: 12px;
+    }
+
+    .power {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        right: 1%;
+        background-color: #EF233C;
+    }
+
+    .number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #14213D;
+    }
+
+    .keyboardContainerLeft {
+        position: relative;
+        height: 83%;
+        width: 25%;
+        margin-top: -2%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex;
+    }
+
+    .keyboardTop {
+        position: relative;
+        display: grid;
+        margin-top: 40%;
+        grid-template-columns: repeat(3, 75px);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+    .keyboardNumber {
+        display: grid;
+        grid-template-columns: repeat(3, 75px);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(75px, auto);
+        margin: 0px;
+        margin-left: 15%;
+        margin-top: 25%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .outline {
+        height: 75vh;
+        width: 100%;
+    }
+
+    .sign {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #fff;
+        top: 0%;
+    }
+
+    .error {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #EF233C;
+        margin-left: 12px;
+    }
+
+    .power {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        right: 1%;
+        background-color: #EF233C;
+    }
+
+    .number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        height: 75px;
+        width: 75px;
+        background-color: #14213D;
+    }
+
+    .keyboardContainerLeft {
+        position: relative;
+        height: 83%;
+        width: 25%;
+        margin-top: -2%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex;
+    }
+
+    .keyboardTop {
+        position: relative;
+        display: grid;
+        margin-top: 40%;
+        grid-template-columns: repeat(3, 75px);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+    .keyboardNumber {
+        display: grid;
+        grid-template-columns: repeat(3, 75px);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(75px, auto);
+        margin: 0px;
+        margin-left: 15%;
+        margin-top: 25%;
+    }
+}
