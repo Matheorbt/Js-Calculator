@@ -2,12 +2,12 @@ const clear = document.querySelector(".delete");
 const back = document.querySelector(".back");
 const power = document.querySelector(".power");
 
-let isOn = 0;
+var isOn = false;
 
 const calculator = document.querySelector(".calculator");
 
 const screen = document.querySelector(".off");
-const texresult = document.querySelector(".screenNb");
+const textresult = document.querySelector(".screenNb");
 
 const floatDot = document.querySelector(".float");
 const equal = document.querySelector(".equal");
@@ -18,29 +18,21 @@ const multiplicationSign = document.querySelector(".multiplication");
 const substractionSign = document.querySelector(".substraction");
 const moduloSign = document.querySelector(".modulo");
 
-const zero = document.querySelector(".zero");
-const one = document.querySelector(".one");
-const two = document.querySelector(".two");
-const three = document.querySelector(".three");
-const four = document.querySelector(".four");
-const five = document.querySelector(".five");
-const six = document.querySelector(".six");
-const seven = document.querySelector(".seven");
-const eight = document.querySelector(".eight");
-const nine = document.querySelector(".nine");
-const numbers = [zero, one, two, three, four, five, six, seven, eight, nine];
+const numbers = document.querySelectorAll('[data-nb]');
 
 const switchCalculator = () => {
     power.addEventListener("click", () => {
         screen.classList.toggle("off");
         screen.classList.toggle("screen");
-        isOn = 1;
+        isOn = !isOn;
     });
 };
 
 const putNb = () => {
-    numbers.array.forEach(element => {
-        console.log(element);
+    numbers.forEach(Element => {
+        Element.addEventListener('click', event => {
+            textresult.innerHTML += Element.textContent;
+        })
     });
 };
 
@@ -81,14 +73,14 @@ const float = () => {
 };
 
 const clearFunction = () => {
-    plusSign.addEventListener("click", () => {
-        fullKnowMore.classList.toggle("activeHiddenAbout");
+    clear.addEventListener("click", () => {
+        textresult.innerHTML = '';
     });
 };
 
 const backFunction = () => {
-    plusSign.addEventListener("click", () => {
-        fullKnowMore.classList.toggle("activeHiddenAbout");
+    back.addEventListener("click", () => {
+        textresult.innerHTML = textresult.innerHTML.substring(0, textresult.innerHTML.length - 1)
     });
 };
 
@@ -98,24 +90,14 @@ const getResult = () => {
     });
 };
 
-const functionInvoc = () => {
-    switchCalculator();
-    if (isOn === 0) {
-        numbers.onclick = function () {
-            window.alert("You must turn on the calculator first !");
-        }
-    }
-    else if (isOn === 1) {
-        addition();
-        substraction();
-        clearFunction();
-        float();
-        division();
-        modulo();
-        multiplication();
-        backFunction();
-        getResult();
-    }
-};
-
-functionInvoc();
+switchCalculator();
+putNb();
+addition();
+substraction();
+clearFunction();
+float();
+division();
+modulo();
+multiplication();
+backFunction();
+getResult();
