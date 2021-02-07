@@ -171,6 +171,9 @@ body {
   font-family: 'Roboto', sans-serif;
   color: black;
   font-size: 64px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .screenNb:hover {
