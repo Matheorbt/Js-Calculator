@@ -25,6 +25,7 @@ const switchCalculator = () => {
         screen.classList.toggle("off");
         screen.classList.toggle("screen");
         isOn = !isOn;
+        textresult.innerHTML = '';
     });
 };
 
