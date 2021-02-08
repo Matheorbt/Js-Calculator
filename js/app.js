@@ -10,7 +10,7 @@ const screen = document.querySelector(".off");
 const textresult = document.querySelector(".screenNb");
 const lastNb = document.querySelector(".lastNb");
 
-const floatDot = document.querySelector(".float");
+const float = document.querySelector(".float");
 const equal = document.querySelector(".equal");
 
 const plusSign = document.querySelector(".addition");
@@ -25,6 +25,9 @@ const numbers = document.querySelectorAll('[data-nb]');
 var firstNb = 0;
 var secondNb = 0;
 var result = 0;
+var choosenSign = undefined;
+var isResultDisplayed = 0;
+var isFloatAlreadyHere = 0;
 
 const switchCalculator = () => {
     power.addEventListener("click", () => {
@@ -39,50 +42,29 @@ const switchCalculator = () => {
 const putNb = () => {
     numbers.forEach(Element => {
         Element.addEventListener('click', event => {
+            if (isResultDisplayed === 1) {
+                textresult.innerHTML = '';
+                lastNb.innerHTML = '';
+                isResultDisplayed = false;
+            }
             textresult.innerHTML += Element.textContent;
         })
     });
 };
 
-const addition = () => {
-    plusSign.addEventListener("click", () => {
-        fullKnowMore.classList.toggle("activeHiddenAbout");
-    });
-};
-
-const substraction = () => {
-    plusSign.addEventListener("click", () => {
-        fullKnowMore.classList.toggle("activeHiddenAbout");
-    });
-};
-
-const multiplication = () => {
-    plusSign.addEventListener("click", () => {
-        fullKnowMore.classList.toggle("activeHiddenAbout");
-    });
-};
-
-const modulo = () => {
-    plusSign.addEventListener("click", () => {
-        fullKnowMore.classList.toggle("activeHiddenAbout");
-    });
-};
-
-const division = () => {
-    plusSign.addEventListener("click", () => {
-        fullKnowMore.classList.toggle("activeHiddenAbout");
-    });
-};
-
-const float = () => {
-    plusSign.addEventListener("click", () => {
-        fullKnowMore.classList.toggle("activeHiddenAbout");
+const floatFunction = () => {
+    float.addEventListener("click", () => {
+        if (isFloatAlreadyHere === 0) {
+            textresult.innerHTML += '.';
+            isFloatAlreadyHere = 1;
+        }
     });
 };
 
 const clearFunction = () => {
     clear.addEventListener("click", () => {
         textresult.innerHTML = '';
+        lastNb.innerHTML = '';
     });
 };
 
@@ -92,27 +74,40 @@ const backFunction = () => {
     });
 };
 
-const getResult = () => {
-    plusSign.addEventListener("click", () => {
-        fullKnowMore.classList.toggle("activeHiddenAbout");
-    });
-};
-
 const handleOperator = () => {
     sign.forEach(Element => {
         Element.addEventListener('click', event => {
-            firstNb = parseInt(textresult.textContent);
+            choosenSign = Element.textContent;
+            firstNb = parseFloat(textresult.textContent);
             lastNb.innerHTML = textresult.textContent + ' ' + Element.textContent;
             textresult.innerHTML = ''; 
+            isFloatAlreadyHere = 0;
         })
     });
 };
 
 const handleEqual = () => {
     equal.addEventListener("click", () => {
-        secondNb = parseInt(textresult.textContent);
+        secondNb = parseFloat(textresult.textContent);
         lastNb.innerHTML = '';
-        textresult.innerHTML = result;
+        if (choosenSign == '+') {
+            result = firstNb + secondNb;
+            textresult.innerHTML = result;
+        } else if (choosenSign == '-') {
+            result = firstNb - secondNb;
+            textresult.innerHTML = result;
+        } else if (choosenSign == 'x') {
+            result = firstNb * secondNb;
+            textresult.innerHTML = result;
+        } else if (choosenSign == '%') {
+            result = firstNb % secondNb;
+            textresult.innerHTML = result;
+        } else if (choosenSign == '/') {
+            result = firstNb / secondNb;
+            textresult.innerHTML = result;
+        }
+        isResultDisplayed = 1;
+        isFloatAlreadyHere = 0;
     });
 };
 
@@ -120,12 +115,6 @@ handleEqual();
 handleOperator();
 switchCalculator();
 putNb();
-addition();
-substraction();
 clearFunction();
-float();
-division();
-modulo();
-multiplication();
+floatFunction();
 backFunction();
-getResult();
