@@ -1,5 +1,8 @@
 ## Js-Calculator
 
+## Project's final link
+https://app.netlify.com/sites/admiring-bohr-0c1049/overview
+
 ## Project's goal
 
 Little project consisting of creating a "Calculator" handling basic operation like addition, substraction, modulo, division, multiplication and handling float number.
