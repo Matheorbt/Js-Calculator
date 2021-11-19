@@ -1,7 +1,7 @@
 ## Js-Calculator
 
 ## Project's final link
-https://app.netlify.com/sites/admiring-bohr-0c1049/overview
+https://css-js-calculator.netlify.app/
 
 ## Project's goal
 
